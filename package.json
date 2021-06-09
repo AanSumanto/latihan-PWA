@@ -1,0 +1,38 @@
+{
+  "name": "latihan-pwa",
+  "version": "1.0.0",
+  "description": "Latihan Membangun PWA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AanSumanto/latihan-PWA.git"
+  },
+  "author": "Aan Sumanto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AanSumanto/latihan-PWA/issues"
+  },
+  "homepage": "https://github.com/AanSumanto/latihan-PWA#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^9.0.0",
+    "css-loader": "^5.2.6",
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "html-webpack-plugin": "^5.3.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "regenerator-runtime": "^0.13.7"
+  }
+}
