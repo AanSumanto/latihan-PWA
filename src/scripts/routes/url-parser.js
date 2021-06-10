@@ -20,8 +20,10 @@ const UrlParser = {
     },
 
     _urlCombiner(spliteUrl) {
-        return (spliteUrl.resource ? `/${spliteUrl.resource}` : '');
+        return (spliteUrl.resource ? `/${spliteUrl.resource}` : '')
+        + (spliteUrl.id ? '/:id' : '')
+        + (spliteUrl.verb ? `/${spliteUrl.verb}` : '');
     },
 };
 
-export default UrlParser
+export default UrlParser;

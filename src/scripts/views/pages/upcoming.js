@@ -1,12 +1,24 @@
+import { createMovieItemTemplate } from "../../../templates/template-creator";
+import TheMovieDbSource from "../../data/themoviedb-source";
+
 const Upcoming = {
     async render() {
         return `
-            <h2>Upcoming Page</h2>
+        <div class="content">
+        <h2 class="content_heading">Upcoming in Cinema</h2>
+        <div id="movies" class="movies">
+  
+        </div>
+      </div>
         `;
     },
 
     async afterRender() {
-        
+        const movies = await TheMovieDbSource.upcomingMovies();
+        const moviesContainer = document.querySelector('#movies');
+        movies.forEach((movie) => {
+            moviesContainer.innerHTML += createMovieItemTemplate(movie);
+        });
     },
 };
     
