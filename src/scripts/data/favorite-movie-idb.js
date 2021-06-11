@@ -9,7 +9,7 @@ const dbPromise = openDB(DATABASE_NAME, DATABASE_VERSION, {
     },
 });
 
-const FavoriteIdb = {
+const FavoriteMovieIdb = {
     async getMovie(id) {
         return (await dbPromise).get(OBJECT_STORE_NAME, id);
     },
@@ -27,4 +27,4 @@ const FavoriteIdb = {
     },
 }
 
-export default FavoriteIdb;
+export default FavoriteMovieIdb;
