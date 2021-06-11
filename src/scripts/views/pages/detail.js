@@ -1,11 +1,13 @@
-import { createMovieDetailTemplate } from "../../../templates/template-creator";
+import { createLikedButtonTemplate, createMovieDetailTemplate } from "../../../templates/template-creator";
 import TheMovieDbSource from "../../data/themoviedb-source";
 import UrlParser from "../../routes/url-parser";
+import LikeButtonInitiator from "../../utils/like-button-initiator";
 
 const Detail = {
     async render() {
         return `
             <div id="movie" class="movie"></div>
+            <div id="likeButtonContainer"></div>
         `;
     },
 
@@ -14,7 +16,21 @@ const Detail = {
         const movie = await TheMovieDbSource.detailMovie(url.id);
         const moviesContainer = document.querySelector('#movie');
         moviesContainer.innerHTML = createMovieDetailTemplate(movie);
+
+        // const likeButtonContainer = document.querySelector('#likeButtonContainer');
+        // likeButtonContainer.innerHTML = createLikedButtonTemplate();
+
+        LikeButtonInitiator.init({
+            likeButtonContainer: document.querySelector('#likeButtonContainer'),
+            movie: {
+                id: movie.id,
+                title: movie.title,
+                overview: movie.overview,
+                backdrop_path: movie.backdrop_path,
+                vote_average: movie.vote_average,
+            },
+        });
     },
 };
 
-export default Detail
+export default Detail;
