@@ -1,4 +1,4 @@
-import CONFIG from "../scripts/globals/config";
+import CONFIG from "../scripts/global/config";
 
 const createMovieDetailTemplate = (movie) => `
 <h2 class="movie_title">${movie.title}</h2>
